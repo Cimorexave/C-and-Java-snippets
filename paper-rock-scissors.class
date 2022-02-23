@@ -1,0 +1,49 @@
+using System;
+					
+//user inputs one of them
+//computer generates one 
+//figures out if it's a win or lost for the user 
+//prints out the number of wins for computer and human
+//add retry option to play again
+public class Program
+{
+	public static string computerResult;
+	public static int tie = 0;
+	public static int computerWin = 0;
+	public static int userWin = 0;
+	public static void Main()
+	{
+		do
+		{			
+			//add do below
+			Console.WriteLine("choose paper, rock, scissors");
+			string input = Console.ReadLine();
+			Random r = new Random();
+			int random = r.Next(1,4);
+			if (random <= 1) { computerResult = "paper"; }
+			else if ( random <= 2) { computerResult = "scissors";} 
+			else { computerResult = "rock"; }
+			Console.WriteLine("computer: " + computerResult);
+		
+			//game rules 
+			// if ( computerResult == input ) { computerWin++; userWin++; }
+			if ( computerResult == "paper") {
+				if ( input == "rock") { computerWin++; }
+				else if ( input == "scissors" ) { userWin++; }
+			}
+			if ( computerResult == "rock") {
+				if ( input == "paper") { userWin++; }
+				else if ( input == "scissors" ) { computerWin++; }
+			}
+			if ( computerResult == "scissors") {
+				if ( input == "paper") { computerWin++; }
+				else if ( input == "rock" ) { userWin++; }
+			}
+			//add while above
+			Console.WriteLine("user wins are: " + userWin + " and computer wins are: " + computerWin);
+			Console.WriteLine("Wollen Sie Nochmal?");
+			
+			
+		}while(Console.ReadLine( ) == "ja");
+	}
+}
