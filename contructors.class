@@ -1,0 +1,106 @@
+public class Book {
+    private String title;
+    private String author;
+    private String genre;
+    private String ISBN;
+    private String releaseDate;
+    private String comment;
+    
+    //getters and setters 
+    
+    //title
+     public String getTitle() {
+         return title;
+     }
+     public void setTitle(String newTitle) {
+         this.title = newTitle;
+     }
+     //Author
+     public String getAuthor() {
+        return author;
+    }
+    public void setAuthor(String newAuthor) {
+        this.author = newAuthor;
+    }
+    //genre 
+    public String getGenre() {
+        return genre;
+    }
+    public void setGenre(String newGenre) {
+        this.genre = newGenre;
+    }
+    //releaseDate
+    public String getReleaseDate() {
+        return releaseDate;
+    }
+    public void setReleaseDate(String newReleaseDate) {
+        this.releaseDate = newReleaseDate;
+    }
+    //comment
+    public String getComment() {
+        return comment;
+    }
+    public void setComment(String newComment) {
+        this.comment = newComment;
+    }
+    //ISBN
+    public String getISBN() {
+        return ISBN;
+    }
+    public void setISBN(String newISBN) {
+        this.ISBN = newISBN;
+    }
+    //constructors
+    
+    /* constructor that can get the value of Title and Author everything else will be initialised as empty. */
+    public Book(String Title, String Author) {
+        getTitle();
+        getAuthor();
+        System.out.println(getTitle() + " , " + getAuthor());
+    }
+    
+    /* constructor that can get Title, Author, ISBN and release date everything else will be initialised as empty. */
+    public Book(String Title, String Author, String ISBN, String releaseDate) {
+        System.out.println(
+            getTitle() + " , " +
+            getAuthor() + " , " +
+            getISBN() + " , " +
+            getReleaseDate()
+            );
+    }
+    /* constructor that can get all of them */
+    public Book( String Title, String Author, String ISBN, String releaseDate, String comment, String genre) {
+        System.out.println(
+            getTitle() + " , " +
+            getAuthor() + " , " +
+            getISBN() + " , " +
+            getReleaseDate() + " , " +
+            getComment() + " , " + 
+            getGenre()
+            );
+    }
+    /* constructor that can’t get anything and everything is initialised as empty. */
+    public Book() {
+        
+    }
+    /*
+    public static void main(String[] args) {
+        Book myBook = new Book(); 
+        System.out.println("Hello World");
+    }
+    */
+    
+}  
+
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		Book myBookA = new Book(); // constructor doing nothing
+		Book myBookB = new Book("title", "Author"); //gets author and title
+		Book myBookC = new Book("title", "author", "releaseDate", "ISBN");
+		Book myBookD = new Book("title", "author", "releaseDate", "ISBN" , "genre" , "comment");
+	}
+}
+
+
